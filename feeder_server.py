@@ -10,8 +10,8 @@ app = Flask(__name__)
 @app.route('/feed/<int:feeder_id>', methods=['POST'])
 def send_feed(feeder_id):
     #run_time = time.time() + food_wt_lbs*5.0 + 2 #Use Calibration Equation Here or on Arduino
-    
-    run_time = request.form['runtime']
+
+    run_time = request.json['runtime']
     
     #Replace with Format strings
     print("Starting feed for "+str(run_time)+" seconds on feeder "+str(feeder_id)+".")
